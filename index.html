@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Método Glow UP — Transforme sua aparência em 21 dias</title>
+    <meta name="description" content="Transforme sua aparência em apenas 21 dias com o Método Glow UP." />
+    <meta name="author" content="Ygor Buenos" />
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Método Glow UP — Transforme sua aparência em 21 dias" />
+    <meta property="og:description" content="Transforme sua aparência em apenas 21 dias com o Método Glow UP." />
+    <meta property="og:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/svrLE1kiHla0FN7wseSwraWGc2X2/social-images/social-1775154472546-desktop_5.webp" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Método Glow UP — Transforme sua aparência em 21 dias" />
+    <meta name="twitter:description" content="Transforme sua aparência em apenas 21 dias com o Método Glow UP." />
+    <meta name="twitter:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/svrLE1kiHla0FN7wseSwraWGc2X2/social-images/social-1775154472546-desktop_5.webp" />
+
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" />
+
+    <!-- Estilos do Método Glow UP -->
+    <link rel="stylesheet" crossorigin href="/assets/index-CR3kiyLy.css" />
+
+    <!-- Meta Pixel Code -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '2694708427634855');
+      fbq('track', 'PageView');
+
+      // Dispara ViewContent ao visualizar a seção da oferta (#oferta)
+      (function() {
+        var viewContentDispatched = false;
+        function attachOfferObserver() {
+          var el = document.getElementById('oferta');
+          if (!el) {
+            setTimeout(attachOfferObserver, 250);
+            return;
+          }
+          if (viewContentDispatched) return;
+          if ('IntersectionObserver' in window) {
+            var obs = new IntersectionObserver(function(entries) {
+              entries.forEach(function(entry) {
+                if (entry.isIntersecting && !viewContentDispatched) {
+                  viewContentDispatched = true;
+                  if (window.fbq) {
+                    window.fbq('track', 'ViewContent', {
+                      content_name: 'Método Glow UP - Oferta 21 Dias',
+                      content_ids: ['metodo-glowup-1999'],
+                      content_type: 'product',
+                      value: 19.99,
+                      currency: 'BRL'
+                    });
+                  }
+                  obs.disconnect();
+                }
+              });
+            }, { threshold: 0.25 });
+            obs.observe(el);
+          } else {
+            var onScroll = function() {
+              if (viewContentDispatched) return;
+              var r = el.getBoundingClientRect();
+              if (r.top < window.innerHeight && r.bottom >= 0) {
+                viewContentDispatched = true;
+                if (window.fbq) {
+                  window.fbq('track', 'ViewContent', {
+                    content_name: 'Método Glow UP - Oferta 21 Dias',
+                    content_ids: ['metodo-glowup-1999'],
+                    content_type: 'product',
+                    value: 19.99,
+                    currency: 'BRL'
+                  });
+                }
+                window.removeEventListener('scroll', onScroll);
+              }
+            };
+            window.addEventListener('scroll', onScroll, { passive: true });
+          }
+        }
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', attachOfferObserver);
+        } else {
+          attachOfferObserver();
+        }
+      })();
+    </script>
+    <!-- End Meta Pixel Code -->
+  </head>
+  <body>
+    <!-- Meta Pixel NoScript -->
+    <noscript>
+      <img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=2694708427634855&ev=PageView&noscript=1"
+      />
+    </noscript>
+    <div id="root"></div>
+    <script type="module" crossorigin src="/assets/index-CPsxnBAM.js"></script>
+  </body>
+</html>

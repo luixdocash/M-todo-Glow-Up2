@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parabéns! Pagamento Confirmado — Método Glow UP</title>
+    <meta name="robots" content="noindex, nofollow" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" />
+
+    <!-- Meta Pixel Code -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '2694708427634855');
+      fbq('track', 'PageView');
+
+      // DISPARO SEGURO DO EVENTO PURCHASE (Com Anti-Duplicação)
+      (function trackPurchaseSafely() {
+        try {
+          var urlParams = new URLSearchParams(window.location.search);
+          var orderId = urlParams.get('order_id') || urlParams.get('id') || urlParams.get('transaction_id') || 'order_' + Math.floor(Date.now() / 60000);
+          var storageKey = 'fb_purchase_fired_' + orderId;
+
+          // Evita disparos duplicados se o usuário recarregar a página
+          if (sessionStorage.getItem(storageKey) || localStorage.getItem(storageKey)) {
+            console.log('[Meta Pixel] Purchase já registrado anteriormente para este pedido:', orderId);
+            return;
+          }
+
+          var purchaseValue = parseFloat(urlParams.get('amount') || urlParams.get('value') || '19.99');
+          if (isNaN(purchaseValue) || purchaseValue <= 0) purchaseValue = 19.99;
+
+          fbq('track', 'Purchase', {
+            content_name: 'Método Glow UP - 21 Dias',
+            content_ids: ['metodo-glowup-1999'],
+            content_type: 'product',
+            value: purchaseValue,
+            currency: 'BRL',
+            num_items: 1,
+            order_id: orderId
+          });
+
+          sessionStorage.setItem(storageKey, 'true');
+          localStorage.setItem(storageKey, 'true');
+          console.log('[Meta Pixel] Evento Purchase disparado com sucesso:', { orderId: orderId, value: purchaseValue });
+        } catch (e) {
+          console.error('[Meta Pixel] Erro ao registrar Purchase:', e);
+        }
+      })();
+    </script>
+    <noscript>
+      <img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=2694708427634855&ev=PageView&noscript=1"
+      />
+    </noscript>
+    <!-- End Meta Pixel Code -->
+
+    <style>
+      :root {
+        --bg: #09090b;
+        --card-bg: rgba(24, 24, 27, 0.85);
+        --border: rgba(255, 255, 255, 0.12);
+        --gold: #d4af37;
+        --emerald: #10b981;
+        --text: #f4f4f5;
+        --text-muted: #a1a1aa;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        background-color: var(--bg);
+        color: var(--text);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem 1rem;
+        background-image: 
+          radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.12), transparent 45%),
+          radial-gradient(circle at 80% 80%, rgba(16, 185, 129, 0.08), transparent 40%);
+      }
+      .container {
+        max-width: 600px;
+        width: 100%;
+        background: var(--card-bg);
+        backdrop-filter: blur(16px);
+        border: 1px solid var(--border);
+        border-radius: 1.75rem;
+        padding: 2.5rem 1.75rem;
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+        text-align: center;
+      }
+      .icon-badge {
+        width: 76px;
+        height: 76px;
+        margin: 0 auto 1.5rem auto;
+        border-radius: 50%;
+        background: rgba(16, 185, 129, 0.15);
+        border: 2px solid var(--emerald);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--emerald);
+        font-size: 2.2rem;
+        animation: pulse 2s infinite ease-in-out;
+      }
+      @keyframes pulse {
+        0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+        50% { transform: scale(1.05); box-shadow: 0 0 20px 4px rgba(16, 185, 129, 0.25); }
+      }
+      h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 1.25;
+        margin-bottom: 0.75rem;
+        background: linear-gradient(135deg, #ffffff 40%, #e4e4e7 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      p.subtitle {
+        color: var(--text-muted);
+        font-size: 1rem;
+        line-height: 1.5;
+        margin-bottom: 2rem;
+      }
+      .info-box {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid var(--border);
+        border-radius: 1.25rem;
+        padding: 1.5rem;
+        text-align: left;
+        margin-bottom: 2rem;
+      }
+      .info-box h3 {
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: #fff;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+      .steps {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.85rem;
+      }
+      .steps li {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+        font-size: 0.9rem;
+        color: #d4d4d8;
+        line-height: 1.45;
+      }
+      .step-num {
+        background: var(--gold);
+        color: #000;
+        font-weight: 800;
+        font-size: 0.75rem;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        margin-top: 1px;
+      }
+      .btn {
+        display: block;
+        width: 100%;
+        padding: 1rem 1.5rem;
+        border-radius: 9999px;
+        font-weight: 700;
+        font-size: 0.95rem;
+        text-decoration: none;
+        text-align: center;
+        transition: all 0.2s ease;
+        cursor: pointer;
+        border: none;
+      }
+      .btn-primary {
+        background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+        color: #000;
+        box-shadow: 0 10px 25px rgba(245, 158, 11, 0.35);
+        margin-bottom: 0.75rem;
+      }
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 15px 30px rgba(245, 158, 11, 0.5);
+      }
+      .btn-secondary {
+        background: rgba(255, 255, 255, 0.06);
+        color: #e4e4e7;
+        border: 1px solid var(--border);
+      }
+      .btn-secondary:hover {
+        background: rgba(255, 255, 255, 0.12);
+      }
+      .security-badge {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.4rem;
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        margin-top: 1.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="icon-badge">✓</div>
+      <h1>Pagamento Aprovado!</h1>
+      <p class="subtitle">Parabéns pela sua decisão. Seu acesso ao <strong>Método Glow UP — 21 Dias</strong> já foi liberado.</p>
+
+      <div class="info-box">
+        <h3>Como acessar seu material:</h3>
+        <ul class="steps">
+          <li>
+            <span class="step-num">1</span>
+            <span>Abra seu aplicativo de <strong>e-mail</strong> cadastrado na compra.</span>
+          </li>
+          <li>
+            <span class="step-num">2</span>
+            <span>Procure pelo e-mail com o assunto <strong>"Método Glow UP"</strong> ou <strong>"SyncPay"</strong>.</span>
+          </li>
+          <li>
+            <span class="step-num">3</span>
+            <span>Verifique também a caixa de <strong>Spam</strong> ou <strong>Lixeira</strong> caso não localize na caixa principal.</span>
+          </li>
+          <li>
+            <span class="step-num">4</span>
+            <span>Clique no link de acesso recebido para iniciar sua transformação de 21 dias.</span>
+          </li>
+        </ul>
+      </div>
+
+      <a href="https://mail.google.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+        Abrir Caixa de Entrada do E-mail
+      </a>
+
+      <a href="/" class="btn btn-secondary">
+        Voltar para a Página Principal
+      </a>
+
+      <div class="security-badge">
+        🔒 Compra 100% Segura e Aprovada pela SyncPay
+      </div>
+    </div>
+  </body>
+</html>

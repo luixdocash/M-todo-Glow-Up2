@@ -1,0 +1,6 @@
+{
+  "name": "Método Glow UP — 21 Dias",
+  "description": "Transforme sua aparência em apenas 21 dias com o Método Glow UP.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
